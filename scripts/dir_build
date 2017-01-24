@@ -15,6 +15,14 @@ fi
 
 CHANNEL="source"
 
+echo "zotero build dir: $ZOTERO_BUILD_DIR\n"
+echo "platform: $PLATFORM\n"
+echo "script dir: $SCRIPT_DIR\n"
+echo "root dir: $ROOT_DIR\n"
+echo "zotero source dir: $ZOTERO_SOURCE_DIR\n"
+#export ZOTERO_SOURCE_DIR = "/home/kohalmyk/work/zotero/zotero"
+
+
 VERSION=`perl -ne 'print and last if s/.*<em:version>(.{3}).+/\1/;' "$ZOTERO_SOURCE_DIR/install.rdf"`
 if [ $VERSION = "4.0" ]; then
 	"$ZOTERO_BUILD_DIR/xpi/build_xpi_4.0" "$ZOTERO_SOURCE_DIR" $CHANNEL
